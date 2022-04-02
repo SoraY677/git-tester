@@ -8,6 +8,6 @@ jobs:
   change:
     runs-on: ubuntu-latest
     steps:
-    - name: Add comment
+    - name: time logger
       run: |
         echo "CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
