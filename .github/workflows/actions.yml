@@ -5,8 +5,11 @@ on:
       - created
 
 jobs:
-  build:
+  greeting:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
     - name: comment
       uses: actions/first-interaction@v1
