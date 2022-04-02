@@ -1,8 +1,5 @@
 name: 'test-1'
-on: 
-  issue_comment:
-    types:
-      - created
+on: [pull_request, issues]
 
 jobs:
   greeting:
