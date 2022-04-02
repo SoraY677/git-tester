@@ -9,6 +9,9 @@ jobs:
   change:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
     - name: time logger
       run: |
         git config user.name github-actions
