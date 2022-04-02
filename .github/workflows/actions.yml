@@ -1,0 +1,17 @@
+name: 'test-1'
+on: 
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  build:
+    if: (github.event.issue.pull_request != null) && (github.event.comment.body == '!github test')
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: Add Comment
+      with:
+        body: |
+          This issue is available for anyone to work on. **Make sure to reference this issue in your pull request.** :sparkles: Thank you for your contribution! :sparkles:
+
