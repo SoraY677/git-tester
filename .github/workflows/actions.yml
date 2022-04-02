@@ -6,7 +6,7 @@ on:
 
 jobs:
   greeting:
-    if: github.event.comment.body == '!github test'
+    if: github.event.comment.body == '/test'
     runs-on: ubuntu-latest
     steps:
     - name: Add comment
