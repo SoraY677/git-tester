@@ -1,4 +1,4 @@
-name: 'test-1'
+name: 'Greeting'
 on: [pull_request, issues]
 
 jobs:
