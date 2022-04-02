@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-    if: github.event.comment.body == '!github test'
     runs-on: ubuntu-latest
     steps:
     - name: comment
