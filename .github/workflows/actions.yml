@@ -14,4 +14,9 @@ jobs:
         fetch-depth: 1
     - name: time logger
       run: |
+        echo "hogehoge" > test.txt
         git config user.name github-actions
+        git config user.email +github-actions@noreply.github.com
+        git add .
+        git commit --author=. -m 'generated'
+        git push
