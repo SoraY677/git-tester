@@ -1,16 +1,17 @@
 name: 'Greeting'
-on: [pull_request, issues]
+on:
+  issue_comment:
+    types:
+      - "created"
 
 jobs:
   greeting:
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '!github test'}}
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
     steps:
-    - name: comment
-      uses: actions/first-interaction@v1
+    - name: Add comment
+      uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: 'Message that will be displayed on users first issue'
-        pr-message: 'Message that will be displayed on users first pull request'
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          test
